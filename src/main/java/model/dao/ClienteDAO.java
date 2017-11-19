@@ -81,6 +81,7 @@ public class ClienteDAO {
                 cliente.setId(resultado.getInt("id"));
                 cliente.setNome(resultado.getString("nome"));
                 cliente.setCpf(resultado.getLong("cpf"));
+                cliente.setEndereco(resultado.getString("endereco"));
                 retorno.add(cliente);
             }
         } catch (SQLException ex) {
