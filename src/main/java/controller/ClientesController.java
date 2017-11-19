@@ -63,7 +63,7 @@ public class ClientesController implements Initializable {
             cliDao.inserir(cliente);
             handlerTelaInicial(new ActionEvent());
         } catch (Exception ex) {
-          
+
             System.out.println("mostrar anchor pane de erro");
         }
 

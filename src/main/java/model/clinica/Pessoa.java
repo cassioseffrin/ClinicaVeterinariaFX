@@ -18,6 +18,9 @@ public abstract class Pessoa implements Acoes, Serializable {
     private LocalDate dataNascimento;
     private String endereco;
 
+    
+    
+    
     public Pessoa(String nome, long cpf, String sexo, LocalDate dataNascimento, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
@@ -47,6 +50,7 @@ public abstract class Pessoa implements Acoes, Serializable {
     public String getNome() {
         return nome;
     }
+ 
 
     public void setNome(String nome) {
         this.nome = nome;

@@ -41,7 +41,7 @@ public class ClienteDAO {
     }
 
     public boolean alterar(Cliente cliente) {
-        String sql = "UPDATE clientes SET nome=?, cpf=?, telefone=? WHERE id=?";
+        String sql = "UPDATE cliente SET nome=?, cpf=?, telefone=? WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, cliente.getNome());
@@ -57,7 +57,7 @@ public class ClienteDAO {
     }
 
     public boolean remover(Cliente cliente) {
-        String sql = "DELETE FROM clientes WHERE id=?";
+        String sql = "DELETE FROM cliente WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, 1);
@@ -70,7 +70,7 @@ public class ClienteDAO {
     }
 
     public List<Cliente> listar() {
-        String sql = "SELECT * FROM clientes";
+        String sql = "SELECT * FROM cliente";
         List<Cliente> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -78,9 +78,9 @@ public class ClienteDAO {
             while (resultado.next()) {
                 Cliente cliente = new Cliente();
 
+                cliente.setId(resultado.getInt("id"));
                 cliente.setNome(resultado.getString("nome"));
-                cliente.setCpf(resultado.getInt("cpf"));
-                cliente.setTelefone(resultado.getString("telefone"));
+                cliente.setCpf(resultado.getLong("cpf"));
                 retorno.add(cliente);
             }
         } catch (SQLException ex) {
@@ -90,7 +90,7 @@ public class ClienteDAO {
     }
 
     public Cliente buscar(Cliente cliente) {
-        String sql = "SELECT * FROM clientes WHERE id=?";
+        String sql = "SELECT * FROM cliente WHERE id=?";
         Cliente retorno = new Cliente();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
