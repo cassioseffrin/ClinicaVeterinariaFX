@@ -4,6 +4,7 @@ com/clinica/clinicaveterinariafx/MainApp.class
 model/dao/AnimalTest.class
 com/clinica/clinicaveterinariafx/FXMLController.class
 model/clinica/Veterinario.class
+controller/AnimalController.class
 model/dao/AnimalDAO.class
 controller/GridClientesController.class
 model/clinica/Acoes.class

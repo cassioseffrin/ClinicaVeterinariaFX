@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorCliente" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AnimalController">
+   <children>
+      <SplitPane dividerPositions="0.489945155393053" layoutX="3.0" layoutY="41.0" prefHeight="303.0" prefWidth="549.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="147.0">
+               <children>
+                  <TableView fx:id="tableViewAnimal" layoutX="14.0" layoutY="33.0" prefHeight="200.0" prefWidth="229.0">
+                    <columns>
+                      <TableColumn fx:id="colunaId" prefWidth="75.0" text="Codigo" />
+                      <TableColumn fx:id="colunaNome" prefWidth="148.0" text="Nome" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="37.0" layoutY="91.0" text="Nome" />
+                  <Label layoutX="33.0" layoutY="56.0" text="Codigo" />
+                  <TextField fx:id="txtId" layoutX="87.0" layoutY="51.0" />
+                  <TextField fx:id="txtNome" layoutX="87.0" layoutY="86.0" />
+                  <Button layoutX="93.0" layoutY="167.0" mnemonicParsing="false" onAction="#handlerRemoverAnimal" text="Deletar" />
+                  <TextField fx:id="txtCor" layoutX="87.0" layoutY="124.0" />
+                  <Label layoutX="40.0" layoutY="129.0" text="Cor" />
+                  <Button layoutX="171.0" layoutY="167.0" mnemonicParsing="false" onAction="#handlerAtualizarAnimal" text="Atualizar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

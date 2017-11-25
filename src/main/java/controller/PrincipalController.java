@@ -24,6 +24,9 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private MenuItem menuCliente;
+    
+    @FXML
+    private MenuItem menuAnimal;
 
  
     @Override
@@ -42,6 +45,12 @@ public class PrincipalController implements Initializable {
         anchorPanePrincipal.getChildren().setAll(a);
     }
 
+    @FXML
+    public void handlerMenuAnimais(ActionEvent e) throws IOException {
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/fxml/Animais.fxml"));
+        anchorPanePrincipal.getChildren().setAll(a);
+    }
+    
     public void telaInicial() throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/fxml/TelaInicial.fxml"));
         anchorPanePrincipal.getChildren().setAll(a);
