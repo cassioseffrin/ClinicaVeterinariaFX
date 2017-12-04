@@ -1,1 +1,1 @@
-glassfish-4.1.1/glassfish/modules/org.eclipse.persistence.moxy.jar
+Sobrescrever o arquivo do glassfish4.1 glassfish-4.1.1/glassfish/modules/org.eclipse.persistence.moxy.jar pelo que esta no git senao os web services nao firao funcionar
