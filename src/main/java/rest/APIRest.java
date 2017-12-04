@@ -17,19 +17,31 @@ import model.database.DatabaseMySQL;
 @Path("/")
 public class APIRest {
 
+    
+    public ClienteDAO getClienteDAO (){
+        DatabaseMySQL db = new DatabaseMySQL();
+        Connection con = db.conectar();
+        ClienteDAO cliDao = new ClienteDAO();
+        cliDao.setConnection((com.mysql.jdbc.Connection) con);
+        return cliDao;
+    }
+    
     @GET
     @Path("/getClientes")
     @Produces("application/json")
-    public  Cliente  getClientes() {
-
-        DatabaseMySQL db = new DatabaseMySQL();
-        Connection con = db.conectar();
-        ClienteDAO aniDao = new ClienteDAO();
-        aniDao.setConnection((com.mysql.jdbc.Connection) con);
-        List<Cliente> lst = aniDao.listar();
-        
-        System.out.println("tamanho lista:::: " + lst.size());
-        return lst.get(1);
+    public  List<Cliente>  getClientes() {
+        List<Cliente> lst = getClienteDAO().listar();
+        return lst;
     }
+    
+    
+    @GET
+    @Path("/findCliente")
+    @Produces("application/json")
+    public  Cliente  getCliente() {
+        List<Cliente> lst = getClienteDAO().listar();
+        return lst.get(0);
+    }
+    
 
 }
