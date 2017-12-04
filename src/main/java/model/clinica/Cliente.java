@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  *
@@ -40,6 +41,8 @@ public class Cliente extends Pessoa implements Serializable, Acoes {
 
     }
 
+    
+    @JsonIgnore
     public LocalDate getDataCadastro() {
         return dataCadastro;
     }

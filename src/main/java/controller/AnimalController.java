@@ -46,7 +46,9 @@ public class AnimalController implements Initializable {
     private TextField txtId;
     @FXML
     private TextField txtCor;
-
+    @FXML
+    private TextField txtPeso;
+            
     private Integer clienteIdSel;
 
     private Integer idAnimalSelecionado;
@@ -119,6 +121,7 @@ public class AnimalController implements Initializable {
             
             animalAtualizar.setId(idAnimalSelecionado);
             animalAtualizar.setNome(txtNome.getText());
+            animalAtualizar.setPeso(Integer.parseInt(txtPeso.getText()) );
             animalAtualizar.setCor(txtCor.getText());
           
             

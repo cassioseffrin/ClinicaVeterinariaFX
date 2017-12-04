@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import javafx.util.converter.LocalDateStringConverter;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  *
@@ -64,6 +65,7 @@ public abstract class Pessoa implements Acoes, Serializable {
         this.sexo = sexo;
     }
 
+    @JsonIgnore
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
