@@ -9,17 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.database.DatabaseMySQL;
 
 /**
  *
  * @author cassioseffrin
  */
-public class AnimalDAO {
+public final class AnimalDAO {
 
     private Connection connection;
 
     public void setConnection(Connection connection) {
         this.connection = connection;
+    }
+
+    public AnimalDAO() {
+        Connection con = DatabaseMySQL.getConnection();
+        setConnection((com.mysql.jdbc.Connection) con);
     }
 
     public boolean inserir(Animal animal) {
@@ -75,7 +81,7 @@ public class AnimalDAO {
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, animalSelecionado.getNome());
-            stmt.setInt (2, animalSelecionado.getPeso());
+            stmt.setInt(2, animalSelecionado.getPeso());
             stmt.setString(3, animalSelecionado.getCor());
             stmt.setInt(4, animalSelecionado.getId());
             stmt.execute();

@@ -9,15 +9,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.database.DatabaseMySQL;
 
 /**
  *
  * @author cassioseffrin
  */
-public class ClienteDAO {
+public final class ClienteDAO {
 
     private Connection connection;
- 
+
+    public ClienteDAO() {
+
+        Connection con = DatabaseMySQL.getConnection();
+        setConnection((com.mysql.jdbc.Connection) con);
+
+    }
 
     public void setConnection(Connection connection) {
         this.connection = connection;
@@ -104,7 +111,7 @@ public class ClienteDAO {
                 retorno.setId(resultado.getInt("id"));
                 retorno.setSexo(resultado.getString("sexo"));
                 retorno.setObservacao(resultado.getString("observacao"));
-               
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

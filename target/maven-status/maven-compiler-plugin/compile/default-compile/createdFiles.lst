@@ -1,4 +1,7 @@
 controller/ClientesController.class
+test/DBSingleton$1.class
+test/ClienteTest.class
+test/DBSingleton$DBSingletonHolder.class
 com/clinica/clinicaveterinariafx/FXMLController.class
 model/clinica/Veterinario.class
 controller/AnimalController.class
@@ -6,15 +9,15 @@ model/dao/AnimalDAO.class
 controller/GridClientesController.class
 model/clinica/Acoes.class
 model/clinica/Animal.class
-model/dao/ClienteTest.class
+test/DBSingleton.class
 controller/PrincipalController.class
 model/database/DatabaseMySQL.class
+test/AnimalTest.class
 model/dao/ClienteDAO.class
 com/clinica/clinicaveterinariafx/MainApp.class
-model/dao/AnimalTest.class
 controller/TelaInicialController.class
+test/NewClass.class
 rest/APIRest.class
-model/database/Database.class
 model/clinica/Cliente.class
 model/clinica/Pessoa.class
 rest/JaxRsActivator.class

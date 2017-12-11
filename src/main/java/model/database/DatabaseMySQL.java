@@ -13,7 +13,7 @@ import com.mysql.jdbc.Connection;
  *
  * @author cassioseffrin
  */
-public class DatabaseMySQL implements Database {
+public class DatabaseMySQL   {
 
     private static Connection connection;
  
@@ -26,7 +26,7 @@ public class DatabaseMySQL implements Database {
         }
     }
     
-    public static Connection conectar() {
+    private static Connection conectar() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
              connection = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1/veterinaria", "root","123");
@@ -37,10 +37,10 @@ public class DatabaseMySQL implements Database {
         }
     }
 
-    @Override
-    public void desconectar(Connection connection) {
+ 
+    private void desconectar() {
         try {
-            connection.close();
+            this.connection.close();
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseMySQL.class.getName()).log(Level.SEVERE, null, ex);
         }

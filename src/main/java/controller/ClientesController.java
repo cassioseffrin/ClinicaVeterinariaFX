@@ -54,12 +54,10 @@ public class ClientesController implements Initializable {
             cliente.setNome(txtNome.getText());
             cliente.setCpf(Long.parseLong(txtCPF.getText()));
             cliente.setEndereco(txtEndereco.getText());
-
-            DatabaseMySQL db = new DatabaseMySQL();
-            Connection con = db.conectar();
+ 
 
             ClienteDAO cliDao = new ClienteDAO();
-            cliDao.setConnection((com.mysql.jdbc.Connection) con);
+ 
             cliDao.inserir(cliente);
             handlerTelaInicial(new ActionEvent());
         } catch (Exception ex) {

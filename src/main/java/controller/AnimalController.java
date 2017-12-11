@@ -48,7 +48,7 @@ public class AnimalController implements Initializable {
     private TextField txtCor;
     @FXML
     private TextField txtPeso;
-            
+
     private Integer clienteIdSel;
 
     private Integer idAnimalSelecionado;
@@ -67,10 +67,9 @@ public class AnimalController implements Initializable {
     }
 
     public void popularTableViewAnimal() {
-        DatabaseMySQL db = new DatabaseMySQL();
-        Connection con = db.conectar();
+
         AnimalDAO aniDao = new AnimalDAO();
-        aniDao.setConnection((com.mysql.jdbc.Connection) con);
+
         List<Animal> lst = aniDao.listar();
         colunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -83,7 +82,7 @@ public class AnimalController implements Initializable {
 
         idAnimalSelecionado = animal.getId();
         animalSelecionado = animal;
-        
+
         txtId.setText(String.valueOf(animal.getId()));
         txtNome.setText(animal.getNome());
         txtCor.setText(animal.getCor());
@@ -97,34 +96,24 @@ public class AnimalController implements Initializable {
     public void handlerRemoverAnimal() throws IOException {
 
         if (idAnimalSelecionado != null) {
-            DatabaseMySQL db = new DatabaseMySQL();
-            Connection con = db.conectar();
             AnimalDAO aniDao = new AnimalDAO();
-            aniDao.setConnection((com.mysql.jdbc.Connection) con);
             aniDao.remover(idAnimalSelecionado);
             popularTableViewAnimal();
 
         }
     }
-    
+
     @FXML
     public void handlerAtualizarAnimal() throws IOException {
 
         if (idAnimalSelecionado != null) {
-            DatabaseMySQL db = new DatabaseMySQL();
-            Connection con = db.conectar();
             AnimalDAO aniDao = new AnimalDAO();
-            aniDao.setConnection((com.mysql.jdbc.Connection) con);
-            
-            
             Animal animalAtualizar = new Animal();
-            
             animalAtualizar.setId(idAnimalSelecionado);
             animalAtualizar.setNome(txtNome.getText());
-            animalAtualizar.setPeso(Integer.parseInt(txtPeso.getText()) );
+            animalAtualizar.setPeso(Integer.parseInt(txtPeso.getText()));
             animalAtualizar.setCor(txtCor.getText());
-          
-            
+
             aniDao.atualizar(animalAtualizar);
             popularTableViewAnimal();
 

@@ -13,12 +13,14 @@ import java.util.HashSet;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  *
  * @author cassioseffrin
  */
+ @XmlRootElement(name = "items")
 public class Cliente extends Pessoa implements Serializable, Acoes {
 
     
@@ -50,7 +52,7 @@ public class Cliente extends Pessoa implements Serializable, Acoes {
     public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
-
+    @JsonIgnore
     public String getTelefone() {
         return telefone;
     }

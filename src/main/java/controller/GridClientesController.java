@@ -75,19 +75,18 @@ public class GridClientesController implements Initializable {
         comboSexo.setEditable(true);
         comboSexo.setOnAction((Event ev) -> {
             String sel = comboSexo.getSelectionModel().getSelectedItem().toString();
-            System.out.println("sel: "+sel);
+            System.out.println("sel: " + sel);
         });
- 
+
         tableViewClientes.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> selecionarItemTabela(newValue));
 
     }
 
     public void popularTableViewCliente() {
-        DatabaseMySQL db = new DatabaseMySQL();
-        Connection con = db.conectar();
+
         ClienteDAO cliDao = new ClienteDAO();
-        cliDao.setConnection((com.mysql.jdbc.Connection) con);
+
         List<Cliente> lst = cliDao.listar();
         colunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -108,11 +107,7 @@ public class GridClientesController implements Initializable {
     public void handlerRemoverCliente() throws IOException {
 
         if (clienteIdSel != null) {
-            DatabaseMySQL db = new DatabaseMySQL();
-            Connection con = db.conectar();
             ClienteDAO cliDao = new ClienteDAO();
-            cliDao.setConnection((com.mysql.jdbc.Connection) con);
-
             cliDao.remover(clienteIdSel);
 
             popularTableViewCliente();
@@ -142,10 +137,9 @@ public class GridClientesController implements Initializable {
 
     private Cliente getClienteDb(int id) {
 
-        DatabaseMySQL db = new DatabaseMySQL();
-        Connection con = db.conectar();
+   
         ClienteDAO cliDao = new ClienteDAO();
-        cliDao.setConnection((com.mysql.jdbc.Connection) con);
+     
 
         return cliDao.buscar(id);
 
