@@ -1,1 +1,11 @@
-Sobrescrever o arquivo do glassfish4.1 glassfish-4.1.1/glassfish/modules/org.eclipse.persistence.moxy.jar pelo que esta no git senao os web services nao vai funcionar
+projeto NetBeans ClinicaVeterinariaFX
+
+Projeto Java Básico usado como referência para disciplina de programação semestre 2017/2
+
+Modelos com JavaFX
+Padrão de projeto Singleton
+GUI com Swing e AWA
+Implementação API REST com RestEasy
+
+
+Sobrescrever o arquivo do glassfish4.1 glassfish-4.1.1/glassfish/modules/org.eclipse.persistence.moxy.jar pelo que esta na raiz deste repositório, sem este fix no jar os web services nao irão funcionar
