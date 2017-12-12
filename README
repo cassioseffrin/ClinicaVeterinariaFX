@@ -6,6 +6,7 @@ Modelos com JavaFX
 Padrão de projeto Singleton
 GUI com Swing e AWT
 Implementação API REST com RestEasy
+Projeto Mobile Gluon
 
 
 Sobrescrever o arquivo do glassfish4.1 glassfish-4.1.1/glassfish/modules/org.eclipse.persistence.moxy.jar pelo que esta na raiz deste repositório, sem este fix no jar os web services nao irão funcionar
