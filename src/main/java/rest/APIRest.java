@@ -22,9 +22,7 @@ import model.database.DatabaseMySQL;
 public class APIRest {
 
     public ClienteDAO getClienteDAO() {
-
         ClienteDAO cliDao = new ClienteDAO();
-
         return cliDao;
     }
 
@@ -33,9 +31,6 @@ public class APIRest {
     @Produces("application/json")
     public List<Cliente> getClientes() {
         List<Cliente> lst = getClienteDAO().listar();
-        for (Cliente c : lst) {
-            System.out.println("cliente " + c);
-        }
         return lst;
     }
 
